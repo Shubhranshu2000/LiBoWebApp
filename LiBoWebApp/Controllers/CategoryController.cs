@@ -38,5 +38,17 @@ namespace LiBoWebApp.Controllers
             return Create();
         }
 
+        public IActionResult Edit(int? id)
+        {
+            if (id == null) {
+                return NotFound();
+            }
+            Category categoryFromDb = _db.Categories.Find(id);
+            if (categoryFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(categoryFromDb);
+        }
     }
 }
