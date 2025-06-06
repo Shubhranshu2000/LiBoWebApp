@@ -1,6 +1,7 @@
 ﻿using LiBoWebApp.Data;
 using LiBoWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LiBoWebApp.Controllers
 {
@@ -72,6 +73,42 @@ namespace LiBoWebApp.Controllers
 
             // Save changes to the database
             _db.SaveChanges();
+            TempData["success"] = "Category updated successfully";
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Category categoryFromDb = _db.Categories.Find(id);
+            if (categoryFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(categoryFromDb);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePost(int? id)
+        {
+
+            // Check if the object exists in the database
+            var categoryFromDb = _db.Categories.Find(id);
+            if (categoryFromDb == null)
+            {
+                return NotFound();
+            }
+
+            // Delete the category in DB
+            _db.Categories.Remove(categoryFromDb);
+
+
+            // Save changes to the database
+            _db.SaveChanges();
+            TempData["success"] = "Category deleted successfully";
             return RedirectToAction("Index");
         }
 

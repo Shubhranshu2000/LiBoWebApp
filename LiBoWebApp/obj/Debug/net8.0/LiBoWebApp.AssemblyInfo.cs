@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LiBoWebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ff2be933fcb618475d1cca73d217404bdf603d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0a8f764fb74a4be80d7621dd13e461b1799586e")]
 [assembly: System.Reflection.AssemblyProductAttribute("LiBoWebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LiBoWebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
